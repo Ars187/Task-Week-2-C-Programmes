@@ -6,16 +6,20 @@ void encrypt(char* str,int key)
 	int i;
 	for(i=0;str[i]!='\0';++i){
 		chr=str[i];
-		if(chr>='a' && chr<='z'){
+		if(chr>='a' && chr<='z')
+		{
 			chr=chr+key;
-			if(chr>'z'){
+			if(chr>'z')
+			{
 				chr=chr-'z'+'a'-1;
 			}
 			str[i] = chr;
 		}
-		else if(chr>='A' && chr<='Z'){
+		else if(chr>='A' && chr<='Z')
+		{
 			chr=chr+key;
-			if(chr>'Z'){
+			if(chr>'Z')
+			{
 				chr=chr-'Z'+'A'- 1;
 			}
 			str[i] = chr;
@@ -30,16 +34,20 @@ void decrypt(char* str,int key)
 	int i;
 	for(i=0;str[i]!='\0';++i){
 		chr=str[i];
-		if(chr>='a' && chr<='z'){
+		if(chr>='a' && chr<='z')
+		{
 			chr=chr-key;
-			if(chr<'a'){
+			if(chr<'a')
+			{
 				chr=chr+'z'-'a'+1;
 			}
 			str[i] = chr;
 		}
-		else if(chr>='A' && chr<='Z'){
+		else if(chr>='A' && chr<='Z')
+		{
 			chr=chr-key;
-			if(chr<'A'){
+			if(chr<'A')
+			{
 				chr=chr+'Z'-'A'+ 1;
 			}
 			str[i] = chr;
@@ -57,20 +65,20 @@ int main()
 	printf("Enter key: ");
 	scanf("%d", &key);
 	while(1)
-    {
+    	{
 		printf("1. Encryption\n2. Decryption\n3. Exit\n");
-        printf("\nEnter You Choice: ");
-        scanf("%d", &ch);
-        switch(ch)
-        {
+        	printf("\nEnter You Choice: ");
+        	scanf("%d", &ch);
+        	switch(ch)
+        	{
 			case 1: encrypt(str,key);
-                    break;
-            case 2: decrypt(str,key);
-                    break;
-            case 3: exit(0);
-            default: printf("\nInvalid choice\n");
-        }
-    }
-    printf("\n");
-    return 0;
+                    		break;
+            		case 2: decrypt(str,key);
+                    		break;
+            		case 3: exit(0);
+            		default: printf("\nInvalid choice\n");
+       	 	}
+    	}
+    	printf("\n");
+   	return 0;
 }
